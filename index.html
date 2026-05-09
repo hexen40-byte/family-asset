@@ -13,31 +13,20 @@
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{
   --bg:#0f1117;--bg2:#1a1d27;--bg3:#22263a;--card:#1e2235;
-  --border:#2d3350;--border2:#3d4470;
-  --text:#e8eaf0;--muted:#7b80a0;--accent:#6c8eff;
-  --green:#4ade80;--red:#f87171;--amber:#fbbf24;
-  --purple:#a78bfa;--teal:#2dd4bf;
+  --border:#2d3350;--text:#e8eaf0;--muted:#7b80a0;--accent:#6c8eff;
+  --green:#4ade80;--red:#f87171;--amber:#fbbf24;--teal:#2dd4bf;
   --radius:12px;--radius-sm:8px;
-  --safe-top: env(safe-area-inset-top, 0px);
-  --safe-bot: env(safe-area-inset-bottom, 0px);
+  --safe-top:env(safe-area-inset-top,0px);--safe-bot:env(safe-area-inset-bottom,0px);
 }
 html,body{height:100%;overflow:hidden}
 body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;background:var(--bg);color:var(--text);font-size:14px;display:flex;flex-direction:column}
-
-/* LAYOUT */
 .scroll-area{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;padding:12px 12px calc(70px + var(--safe-bot)) 12px}
-
-/* BOTTOM NAV */
 .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:var(--bg2);border-top:1px solid var(--border);display:flex;padding-bottom:var(--safe-bot);z-index:100}
 .nav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 4px 8px;border:none;background:transparent;color:var(--muted);cursor:pointer;font-size:10px;font-weight:500;transition:color .15s}
 .nav-item.active{color:var(--accent)}
 .nav-icon{font-size:20px;line-height:1}
-
-/* HEADER */
 .page-header{display:flex;align-items:center;justify-content:space-between;padding:8px 0 14px}
 .page-title{font-size:22px;font-weight:700}
-
-/* CARDS */
 .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:10px}
 .card-title{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:10px}
 .metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
@@ -47,11 +36,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sa
 .metric-sub{font-size:10px;color:var(--muted);margin-top:2px}
 .metric-value.green{color:var(--green)}.metric-value.red{color:var(--red)}.metric-value.accent{color:var(--accent)}
 .chart-wrap{position:relative;height:170px;margin-top:6px}
-
-/* TABLE */
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 table{width:100%;border-collapse:collapse;font-size:12px;min-width:480px}
-th{text-align:left;padding:7px 8px;color:var(--muted);font-weight:500;font-size:10px;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid var(--border);white-space:nowrap}
+th{text-align:left;padding:7px 8px;color:var(--muted);font-weight:500;font-size:10px;text-transform:uppercase;border-bottom:1px solid var(--border);white-space:nowrap}
 td{padding:9px 8px;border-bottom:1px solid var(--border);white-space:nowrap}
 tr:last-child td{border-bottom:none}
 .badge{display:inline-flex;align-items:center;padding:2px 7px;border-radius:20px;font-size:10px;font-weight:600}
@@ -62,41 +49,55 @@ tr:last-child td{border-bottom:none}
 .badge.other{background:rgba(123,128,160,.15);color:var(--muted)}
 .ccy-tag{display:inline-flex;padding:1px 5px;border-radius:4px;font-size:9px;font-weight:700;background:var(--bg3);color:var(--muted);margin-left:3px}
 .change.pos{color:var(--green)}.change.neg{color:var(--red)}.change.zero{color:var(--muted)}
-
-/* FORM */
 .form-group{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
 .form-group label{font-size:11px;color:var(--muted);font-weight:500}
-.form-group input,.form-group select{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text);padding:10px 12px;font-size:15px;outline:none;transition:border-color .2s;width:100%;-webkit-appearance:none;appearance:none}
+.form-group input,.form-group select{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text);padding:10px 12px;font-size:15px;outline:none;transition:border-color .2s;width:100%;-webkit-appearance:none}
 .form-group input:focus,.form-group select:focus{border-color:var(--accent)}
 .form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237b80a0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
 .btn{padding:12px 20px;border-radius:var(--radius-sm);border:none;cursor:pointer;font-size:15px;font-weight:600;transition:all .15s;width:100%;margin-top:4px}
 .btn-primary{background:var(--accent);color:#fff}
 .btn-danger{background:rgba(248,113,113,.15);color:var(--red);border:1px solid rgba(248,113,113,.2)}
-.btn-sm{padding:6px 12px;font-size:12px;width:auto}
+.btn-sm{padding:6px 12px;font-size:12px;width:auto;margin-top:0}
 .btn-ghost{background:rgba(108,142,255,.1);color:var(--accent);border:1px solid rgba(108,142,255,.2)}
-
-/* FILTER CHIPS */
 .filter-row{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;margin-bottom:10px;-webkit-overflow-scrolling:touch}
 .filter-row::-webkit-scrollbar{display:none}
 .chip{padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;font-size:12px;font-weight:500;white-space:nowrap;flex-shrink:0}
 .chip.active{border-color:var(--accent);background:rgba(108,142,255,.12);color:var(--accent)}
-
-/* BASE CCY */
 .ccy-row{display:flex;gap:6px;margin-bottom:12px;overflow-x:auto}
 .ccy-row::-webkit-scrollbar{display:none}
 .ccy-btn{padding:7px 14px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;font-size:13px;font-weight:600;white-space:nowrap;flex-shrink:0}
 .ccy-btn.active{border-color:var(--accent);background:rgba(108,142,255,.14);color:var(--accent)}
 
-/* STATUS */
-.status-row{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);margin-bottom:12px}
-.status-dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0}
-.status-dot.loading{background:var(--amber);animation:blink 1s infinite}
-.status-dot.error{background:var(--red)}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.spin{display:inline-block;animation:spinA .7s linear infinite}
-@keyframes spinA{to{transform:rotate(360deg)}}
+/* STATUS BOX */
+.status-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:12px;font-size:12px}
+.status-row{display:flex;align-items:center;gap:8px;margin-bottom:2px}
+.status-row:last-child{margin-bottom:0}
+.status-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.dot-ok{background:var(--green)}.dot-warn{background:var(--amber)}.dot-err{background:var(--red)}.dot-idle{background:var(--muted)}
+.dot-spin{background:var(--accent);animation:pulse .8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 
-/* FX */
+/* PRICE STATUS per asset */
+.price-status{font-size:10px;margin-top:2px}
+.price-status.live{color:var(--green)}.price-status.manual{color:var(--amber)}.price-status.cost{color:var(--red)}
+
+.asset-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border)}
+.asset-row:last-child{border-bottom:none}
+.asset-left{flex:1;min-width:0}
+.asset-symbol{font-weight:700;color:var(--accent);font-size:14px}
+.asset-name{font-size:12px;color:var(--muted);margin-top:2px}
+.asset-right{text-align:right;flex-shrink:0;margin-left:12px}
+.asset-value{font-weight:700;font-size:14px}
+.asset-gain{font-size:12px;margin-top:2px}
+.empty{text-align:center;padding:40px 20px;color:var(--muted);font-size:13px}
+.page{display:none}.page.active{display:block}
+.separator{border:none;border-top:1px solid var(--border);margin:14px 0}
+.add-msg{font-size:13px;padding:8px 0;min-height:20px}
+.section-title{font-size:17px;font-weight:700}
+.member-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.stat-item{background:var(--bg2);border-radius:var(--radius-sm);padding:10px}
+.stat-label{font-size:10px;color:var(--muted);margin-bottom:2px}
+.stat-value{font-size:15px;font-weight:700}
 .fx-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;margin-bottom:8px}
 .fx-pair{font-size:11px;color:var(--muted);font-weight:600;margin-bottom:4px}
 .fx-rate{font-size:20px;font-weight:700;margin-bottom:2px}
@@ -104,39 +105,18 @@ tr:last-child td{border-bottom:none}
 .fx-input-row{display:flex;gap:8px;align-items:center}
 .fx-input-row input{flex:1;background:var(--card);border:1px solid var(--border);border-radius:6px;color:var(--text);padding:8px 10px;font-size:14px;outline:none}
 .override-badge{font-size:9px;padding:2px 6px;border-radius:10px;background:rgba(251,191,36,.15);color:var(--amber);font-weight:600;margin-left:6px}
-
-/* CONVERTER */
 .conv-row{display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap;margin-bottom:10px}
 .conv-row .form-group{flex:1;min-width:80px;margin-bottom:0}
 .conv-arrow{padding-bottom:12px;font-size:18px;color:var(--muted)}
 .conv-result{font-size:22px;font-weight:700;color:var(--accent);padding:10px 0 4px}
 
-/* MEMBER CARD */
-.member-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
-.stat-item{background:var(--bg2);border-radius:var(--radius-sm);padding:10px}
-.stat-label{font-size:10px;color:var(--muted);margin-bottom:2px}
-.stat-value{font-size:15px;font-weight:700}
-
-/* ASSET ROW (mobile list) */
-.asset-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border)}
-.asset-row:last-child{border-bottom:none}
-.asset-left{flex:1;min-width:0}
-.asset-symbol{font-weight:700;color:var(--accent);font-size:14px}
-.asset-name{font-size:12px;color:var(--muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.asset-right{text-align:right;flex-shrink:0;margin-left:12px}
-.asset-value{font-weight:700;font-size:14px}
-.asset-gain{font-size:12px;margin-top:2px}
-
-.empty{text-align:center;padding:40px 20px;color:var(--muted);font-size:13px}
-.page{display:none}.page.active{display:block}
-.separator{border:none;border-top:1px solid var(--border);margin:14px 0}
-
-/* ADD MSG */
-.add-msg{font-size:13px;padding:8px 0;min-height:20px}
-
-/* Section row */
-.section-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-.section-title{font-size:17px;font-weight:700}
+/* EDIT MODAL */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;display:flex;align-items:flex-end}
+.modal-bg.hidden{display:none}
+.modal{background:var(--bg2);border-radius:var(--radius) var(--radius) 0 0;padding:20px;width:100%;max-height:85vh;overflow-y:auto;padding-bottom:calc(20px + var(--safe-bot))}
+.modal-title{font-size:17px;font-weight:700;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center}
+.spin{display:inline-block;animation:spinA .7s linear infinite}
+@keyframes spinA{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
@@ -148,7 +128,13 @@ tr:last-child td{border-bottom:none}
       <span class="page-title">💼 總覽</span>
       <button class="btn btn-ghost btn-sm" onclick="refreshAll()" id="btn-refresh">↻ 更新</button>
     </div>
-    <div class="status-row"><div id="status-dot" class="status-dot"></div><span id="status-txt">點「更新」取得即時報價與匯率</span></div>
+
+    <!-- STATUS BOX -->
+    <div class="status-box">
+      <div class="status-row"><div class="status-dot" id="sd-price"></div><span id="st-price">尚未更新報價</span></div>
+      <div class="status-row"><div class="status-dot" id="sd-fx"></div><span id="st-fx">尚未更新匯率</span></div>
+    </div>
+
     <div class="ccy-row">
       <button class="ccy-btn active" onclick="setBase('TWD',this)">TWD</button>
       <button class="ccy-btn" onclick="setBase('USD',this)">USD</button>
@@ -159,10 +145,7 @@ tr:last-child td{border-bottom:none}
     <div class="metric-grid" id="metrics"></div>
     <div class="card"><div class="card-title">資產配置</div><div class="chart-wrap"><canvas id="pie-chart"></canvas></div></div>
     <div class="card"><div class="card-title">持有人分布</div><div class="chart-wrap"><canvas id="owner-chart"></canvas></div></div>
-    <div class="card">
-      <div class="card-title">前 5 大持倉</div>
-      <div id="top5"></div>
-    </div>
+    <div class="card"><div class="card-title">前 5 大持倉</div><div id="top5"></div></div>
   </div>
 
   <!-- ASSETS -->
@@ -191,16 +174,30 @@ tr:last-child td{border-bottom:none}
         </select></div>
       <div class="form-group"><label>持有數量</label><input id="f-qty" type="number" placeholder="股數 / 數量" step="any" inputmode="decimal"></div>
       <div class="form-group"><label>平均成本（原幣別 / 單位）</label><input id="f-cost" type="number" placeholder="每股成本" step="any" inputmode="decimal"></div>
-      <div class="form-group"><label>現值（選填，空白 = 自動抓）</label><input id="f-price" type="number" placeholder="每股現值" step="any" inputmode="decimal"></div>
+      <div class="form-group"><label>現值（手動輸入，更新後自動覆蓋）</label><input id="f-price" type="number" placeholder="每股現值，可留空" step="any" inputmode="decimal"></div>
       <div class="form-group"><label>備註</label><input id="f-note" placeholder="選填" autocomplete="off"></div>
       <button class="btn btn-primary" onclick="addAsset()">確認新增</button>
       <div id="add-msg" class="add-msg"></div>
     </div>
+
+    <!-- 代號格式說明 -->
+    <div class="card">
+      <div class="card-title" style="margin-bottom:8px">代號格式參考</div>
+      <div style="font-size:12px;color:var(--muted);line-height:2">
+        台股：<strong style="color:var(--text)">2330.TW</strong>、<strong style="color:var(--text)">0050.TW</strong>、<strong style="color:var(--text)">00878.TW</strong><br>
+        美股：<strong style="color:var(--text)">AAPL</strong>、<strong style="color:var(--text)">TSLA</strong>、<strong style="color:var(--text)">QQQ</strong><br>
+        港股：<strong style="color:var(--text)">0700.HK</strong>、<strong style="color:var(--text)">9988.HK</strong><br>
+        日股：<strong style="color:var(--text)">7203.T</strong>、<strong style="color:var(--text)">6758.T</strong><br>
+        加密：<strong style="color:var(--text)">BTC</strong>、<strong style="color:var(--text)">ETH</strong>、<strong style="color:var(--text)">SOL</strong><br>
+        現金/定存：類型選「現金」，代號隨意填
+      </div>
+    </div>
+
     <div class="card">
       <div class="card-title" style="margin-bottom:10px">成員管理</div>
       <div style="display:flex;gap:8px;margin-bottom:10px">
         <input id="new-member" placeholder="新成員姓名" style="flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text);padding:10px 12px;font-size:15px;outline:none">
-        <button class="btn btn-ghost btn-sm" onclick="addMember()" style="width:auto;margin:0">新增</button>
+        <button class="btn btn-ghost btn-sm" onclick="addMember()">新增</button>
       </div>
       <div id="member-list"></div>
     </div>
@@ -210,9 +207,9 @@ tr:last-child td{border-bottom:none}
   <div id="page-fx" class="page">
     <div class="page-header">
       <span class="page-title">💱 匯率</span>
-      <button class="btn btn-ghost btn-sm" onclick="fetchRates()" style="width:auto">↻ 更新</button>
+      <button class="btn btn-ghost btn-sm" onclick="fetchRates()">↻ 更新</button>
     </div>
-    <div class="ccy-row" id="fx-base-row">
+    <div class="ccy-row">
       <button class="ccy-btn active" onclick="setBase('TWD',this)">TWD</button>
       <button class="ccy-btn" onclick="setBase('USD',this)">USD</button>
       <button class="ccy-btn" onclick="setBase('HKD',this)">HKD</button>
@@ -220,10 +217,10 @@ tr:last-child td{border-bottom:none}
       <button class="ccy-btn" onclick="setBase('EUR',this)">EUR</button>
     </div>
     <div id="fx-list"></div>
-    <div class="card" style="margin-top:4px">
+    <div class="card">
       <div class="card-title" style="margin-bottom:12px">換算機</div>
       <div class="conv-row">
-        <div class="form-group"><label>金額</label><input id="conv-amount" type="number" value="1000" inputmode="decimal" oninput="calcConv()" style="font-size:15px"></div>
+        <div class="form-group"><label>金額</label><input id="conv-amount" type="number" value="1000" inputmode="decimal" oninput="calcConv()"></div>
         <div class="form-group"><label>從</label><select id="conv-from" onchange="calcConv()"><option>TWD</option><option>USD</option><option>HKD</option><option>JPY</option><option>EUR</option><option>GBP</option><option>CNY</option><option>AUD</option></select></div>
         <div class="conv-arrow">→</div>
         <div class="form-group"><label>到</label><select id="conv-to" onchange="calcConv()"><option>USD</option><option>TWD</option><option>HKD</option><option>JPY</option><option>EUR</option><option>GBP</option><option>CNY</option><option>AUD</option></select></div>
@@ -249,18 +246,45 @@ tr:last-child td{border-bottom:none}
   <button class="nav-item" onclick="showPage('members')"><span class="nav-icon">👨‍👩‍👧</span>成員</button>
 </nav>
 
+<!-- EDIT MODAL -->
+<div class="modal-bg hidden" id="edit-modal">
+  <div class="modal">
+    <div class="modal-title">編輯資產 <button onclick="closeEdit()" style="background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer">✕</button></div>
+    <div class="form-group"><label>持有人</label><select id="e-owner"></select></div>
+    <div class="form-group"><label>券商 / 交易所</label><input id="e-broker" autocomplete="off"></div>
+    <div class="form-group"><label>名稱</label><input id="e-name" autocomplete="off"></div>
+    <div class="form-group"><label>類型</label>
+      <select id="e-type"><option value="stock">股票</option><option value="etf">ETF</option><option value="crypto">加密貨幣</option><option value="cash">現金／定存</option><option value="other">其他</option></select></div>
+    <div class="form-group"><label>原始幣別</label>
+      <select id="e-currency">
+        <option value="TWD">TWD</option><option value="USD">USD</option>
+        <option value="HKD">HKD</option><option value="JPY">JPY</option>
+        <option value="EUR">EUR</option><option value="GBP">GBP</option>
+        <option value="CNY">CNY</option><option value="AUD">AUD</option>
+      </select></div>
+    <div class="form-group"><label>持有數量</label><input id="e-qty" type="number" step="any" inputmode="decimal"></div>
+    <div class="form-group"><label>平均成本</label><input id="e-cost" type="number" step="any" inputmode="decimal"></div>
+    <div class="form-group"><label>手動現值（留空 = 自動抓）</label><input id="e-price" type="number" step="any" inputmode="decimal" placeholder="留空讓系統自動抓"></div>
+    <div class="form-group"><label>備註</label><input id="e-note" autocomplete="off"></div>
+    <button class="btn btn-primary" onclick="saveEdit()">儲存</button>
+    <button class="btn btn-danger" onclick="deleteFromEdit()" style="margin-top:8px">刪除此資產</button>
+  </div>
+</div>
+
 <script>
 const CCYS=['TWD','USD','HKD','JPY','EUR','GBP','CNY','AUD'];
 const FALLBACK={TWD:32.5,USD:1,HKD:7.82,JPY:155,EUR:0.92,GBP:0.79,CNY:7.24,AUD:1.53};
 
 let S={
   assets:[],members:['本人'],
-  prices:{},ratesUSD:{...FALLBACK},rateOverrides:{},
+  prices:{},   // id → live price (原幣別)
+  ratesUSD:{...FALLBACK},rateOverrides:{},
   baseCcy:'TWD',lastPrice:null,lastFX:null,filterOwner:'all'
 };
+let editingId=null;
 
-function save(){try{localStorage.setItem('fa_v3',JSON.stringify(S));}catch(e){}}
-function load(){try{const s=localStorage.getItem('fa_v3');if(s)S={...S,...JSON.parse(s)};}catch(e){}}
+function save(){try{localStorage.setItem('fa_v4',JSON.stringify(S));}catch(e){}}
+function load(){try{const s=localStorage.getItem('fa_v4');if(s)S={...S,...JSON.parse(s)};}catch(e){}}
 
 // ── RATE ENGINE ──
 function rate(from,to){
@@ -272,65 +296,146 @@ function rate(from,to){
 function toBase(amt,ccy){return amt*rate(ccy,S.baseCcy);}
 function fmtBase(n){
   const sym={TWD:'NT$',USD:'US$',HKD:'HK$',JPY:'¥',EUR:'€',GBP:'£',CNY:'¥',AUD:'A$'}[S.baseCcy]||S.baseCcy+' ';
-  if(S.baseCcy==='JPY')return sym+Math.round(n).toLocaleString();
-  return sym+Number(n.toFixed(0)).toLocaleString();
+  if(['JPY','TWD'].includes(S.baseCcy))return sym+Math.round(n).toLocaleString();
+  return sym+Number(n.toFixed(2)).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
 }
 
-// ── FETCH ──
-async function fetchRates(){
-  setStatus('loading','更新匯率...');
-  const urls=['https://api.exchangerate-api.com/v4/latest/USD','https://open.er-api.com/v6/latest/USD'];
-  for(const url of urls){
+// ── PRICE SOURCE ──
+// Multiple CORS proxies — try in order until one works
+const PROXIES=[
+  url=>`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,
+  url=>`https://corsproxy.io/?${encodeURIComponent(url)}`,
+  url=>`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
+];
+
+async function fetchWithProxy(targetUrl){
+  for(const proxy of PROXIES){
     try{
-      const r=await fetch(url,{signal:AbortSignal.timeout(7000)});
-      const j=await r.json();
-      const rates=j.rates||j.conversion_rates;
-      if(rates){CCYS.forEach(c=>{if(rates[c])S.ratesUSD[c]=rates[c];});S.lastFX=ts();save();renderFX();calcConv();return true;}
-    }catch(e){}
+      const res=await fetch(proxy(targetUrl),{signal:AbortSignal.timeout(8000)});
+      if(!res.ok)continue;
+      const text=await res.text();
+      // allorigins wraps in {contents:"..."}
+      try{
+        const outer=JSON.parse(text);
+        if(outer.contents)return JSON.parse(outer.contents);
+        return outer;
+      }catch(e){
+        return JSON.parse(text);
+      }
+    }catch(e){continue;}
   }
-  setStatus('error','匯率更新失敗');return false;
+  return null;
 }
-async function fetchYahoo(sym){
+
+async function fetchYahoo(symbol){
   try{
-    const url=`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?interval=1d&range=1d`;
-    const r=await fetch('https://corsproxy.io/?'+encodeURIComponent(url),{signal:AbortSignal.timeout(6000)});
-    const j=await r.json();
+    const url=`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=1d`;
+    const j=await fetchWithProxy(url);
+    if(!j)return null;
     const p=j?.chart?.result?.[0]?.meta?.regularMarketPrice;
     return p?parseFloat(p):null;
   }catch(e){return null;}
 }
-async function fetchCrypto(sym){
-  const map={BTC:'bitcoin',ETH:'ethereum',BNB:'binancecoin',SOL:'solana',USDT:'tether',USDC:'usd-coin',XRP:'ripple',ADA:'cardano',DOGE:'dogecoin',DOT:'polkadot',MATIC:'matic-network',LINK:'chainlink',AVAX:'avalanche-2',LTC:'litecoin'};
-  const id=map[sym.replace(/USDT$/,'').replace(/USD$/,'')];
+
+const CRYPTO_IDS={
+  BTC:'bitcoin',ETH:'ethereum',BNB:'binancecoin',SOL:'solana',
+  USDT:'tether',USDC:'usd-coin',XRP:'ripple',ADA:'cardano',
+  DOGE:'dogecoin',DOT:'polkadot',MATIC:'matic-network',
+  LINK:'chainlink',AVAX:'avalanche-2',LTC:'litecoin',UNI:'uniswap',
+  ATOM:'cosmos',NEAR:'near',OP:'optimism',ARB:'arbitrum'
+};
+async function fetchCrypto(symbol){
+  const clean=symbol.replace(/USDT$/,'').replace(/USD$/,'');
+  const id=CRYPTO_IDS[clean];
   if(!id)return null;
   try{
-    const r=await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${id}&vs_currencies=usd`,{signal:AbortSignal.timeout(6000)});
+    const url=`https://api.coingecko.com/api/v3/simple/price?ids=${id}&vs_currencies=usd`;
+    // CoinGecko allows direct fetch (has CORS headers)
+    const r=await fetch(url,{signal:AbortSignal.timeout(8000)});
+    if(!r.ok)throw new Error();
     const j=await r.json();
     return j?.[id]?.usd||null;
-  }catch(e){return null;}
-}
-async function refreshPrices(){
-  const toFetch=S.assets.filter(a=>a.type!=='cash'&&a.type!=='other');
-  await Promise.allSettled(toFetch.map(async a=>{
-    let p=null;
-    if(a.type==='crypto')p=await fetchCrypto(a.symbol);
-    else p=await fetchYahoo(a.symbol);
-    if(p!==null)S.prices[a.id]=p;
-  }));
-  S.lastPrice=ts();
-}
-async function refreshAll(){
-  const btn=document.getElementById('btn-refresh');
-  if(btn)btn.innerHTML='<span class="spin">↻</span> 更新中';
-  setStatus('loading','更新報價與匯率...');
-  await Promise.allSettled([fetchRates(),refreshPrices()]);
-  save();render();
-  setStatus('ok',`報價 ${S.lastPrice||'–'} ／ 匯率 ${S.lastFX||'–'}`);
-  if(btn)btn.innerHTML='↻ 更新';
+  }catch(e){
+    // fallback through proxy
+    const url=`https://api.coingecko.com/api/v3/simple/price?ids=${id}&vs_currencies=usd`;
+    const j=await fetchWithProxy(url);
+    return j?.[id]?.usd||null;
+  }
 }
 
+async function refreshPrices(){
+  setPriceStatus('loading','抓取報價中...');
+  const toFetch=S.assets.filter(a=>a.type!=='cash'&&a.type!=='other');
+  let ok=0,fail=0;
+  await Promise.allSettled(toFetch.map(async a=>{
+    let p=null;
+    if(a.type==='crypto') p=await fetchCrypto(a.symbol);
+    else p=await fetchYahoo(a.symbol);
+    if(p!==null){S.prices[a.id]=p;ok++;}
+    else fail++;
+  }));
+  S.lastPrice=ts();
+  if(fail===0&&ok>0) setPriceStatus('ok',`報價已更新 ${S.lastPrice}（${ok} 筆）`);
+  else if(ok>0) setPriceStatus('warn',`${ok} 筆成功，${fail} 筆失敗 ${S.lastPrice}`);
+  else if(toFetch.length===0) setPriceStatus('ok','無需抓取報價（現金類資產）');
+  else setPriceStatus('err',`報價抓取失敗 — 請確認網路，或手動填入現值`);
+}
+
+async function fetchRates(){
+  setFXStatus('loading','更新匯率...');
+  const urls=[
+    'https://api.exchangerate-api.com/v4/latest/USD',
+    'https://open.er-api.com/v6/latest/USD',
+  ];
+  for(const url of urls){
+    try{
+      const r=await fetch(url,{signal:AbortSignal.timeout(8000)});
+      const j=await r.json();
+      const rates=j.rates||j.conversion_rates;
+      if(rates){
+        CCYS.forEach(c=>{if(rates[c])S.ratesUSD[c]=rates[c];});
+        S.lastFX=ts();
+        setFXStatus('ok',`匯率已更新 ${S.lastFX}`);
+        save();renderFX();calcConv();return true;
+      }
+    }catch(e){}
+  }
+  setFXStatus('err','匯率更新失敗，使用上次資料');
+  return false;
+}
+
+async function refreshAll(){
+  const btn=document.getElementById('btn-refresh');
+  if(btn){btn.innerHTML='<span class="spin">↻</span>';btn.disabled=true;}
+  await Promise.allSettled([fetchRates(),refreshPrices()]);
+  save();render();
+  if(btn){btn.innerHTML='↻ 更新';btn.disabled=false;}
+}
+
+// ── STATUS HELPERS ──
+function setPriceStatus(s,txt){
+  const d=document.getElementById('sd-price'),t=document.getElementById('st-price');
+  if(d)d.className='status-dot '+{ok:'dot-ok',warn:'dot-warn',err:'dot-err',loading:'dot-spin'}[s];
+  if(t)t.textContent=txt;
+}
+function setFXStatus(s,txt){
+  const d=document.getElementById('sd-fx'),t=document.getElementById('st-fx');
+  if(d)d.className='status-dot '+{ok:'dot-ok',warn:'dot-warn',err:'dot-err',loading:'dot-spin'}[s];
+  if(t)t.textContent=txt;
+}
+function ts(){return new Date().toLocaleTimeString('zh-TW',{hour:'2-digit',minute:'2-digit'});}
+
 // ── CALC ──
-function getPrice(a){if(a.manualPrice)return a.manualPrice;if(S.prices[a.id])return S.prices[a.id];return a.costPerUnit||0;}
+function getPrice(a){
+  if(S.prices[a.id]!=null)return S.prices[a.id];   // live
+  if(a.manualPrice)return a.manualPrice;             // manual
+  return a.costPerUnit||0;                           // fallback cost
+}
+function priceSource(a){
+  if(S.prices[a.id]!=null)return 'live';
+  if(a.manualPrice)return 'manual';
+  return 'cost';
+}
 function curBase(a){return toBase(getPrice(a)*a.qty,a.currency);}
 function costBase(a){return toBase(a.costPerUnit*a.qty,a.currency);}
 function gainPct(a){const c=costBase(a);return c?(curBase(a)-c)/c*100:0;}
@@ -340,16 +445,15 @@ function fmtPct(n){return(n>=0?'+':'')+n.toFixed(2)+'%';}
 function typeLabel(t){return{stock:'股票',etf:'ETF',crypto:'加密貨幣',cash:'現金',other:'其他'}[t]||t;}
 function typeBadge(t){return`<span class="badge ${t}">${typeLabel(t)}</span>`;}
 function cc(n){return n>0.01?'pos':n<-0.01?'neg':'zero';}
-function ts(){return new Date().toLocaleTimeString('zh-TW',{hour:'2-digit',minute:'2-digit'});}
-function setStatus(s,txt){
-  const d=document.getElementById('status-dot'),t=document.getElementById('status-txt');
-  if(d)d.className='status-dot'+(s==='loading'?' loading':s==='error'?' error':'');
-  if(t)t.textContent=txt;
+function priceLabel(a){
+  const s=priceSource(a);
+  return{live:'● 即時報價',manual:'● 手動輸入',cost:'● 使用成本價（未抓到報價）'}[s];
 }
+function priceCls(a){return priceSource(a);}
 function setBase(ccy,btn){
   S.baseCcy=ccy;save();
   document.querySelectorAll('.ccy-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelectorAll('.ccy-btn').forEach(b=>{if(b.textContent===ccy)b.classList.add('active');});
+  document.querySelectorAll('.ccy-btn').forEach(b=>{if(b.textContent.trim()===ccy)b.classList.add('active');});
   render();
 }
 
@@ -360,8 +464,8 @@ function render(){
   renderAssetList();renderOwnerFilter();
   renderFX();calcConv();
   renderMemberList();renderMemberDetail();renderOwnerSelect();
+  renderEditOwnerSelect();
 }
-
 function renderMetrics(){
   const el=document.getElementById('metrics');if(!el)return;
   const total=S.assets.reduce((s,a)=>s+curBase(a),0);
@@ -371,10 +475,9 @@ function renderMetrics(){
     <div class="metric"><div class="metric-label">總資產市值</div><div class="metric-value accent">${fmtBase(total)}</div><div class="metric-sub">${S.baseCcy} 計價</div></div>
     <div class="metric"><div class="metric-label">未實現損益</div><div class="metric-value ${gain>=0?'green':'red'}">${fmtBase(gain)}</div><div class="metric-sub">${fmtPct(gainP)}</div></div>
     <div class="metric"><div class="metric-label">總投入成本</div><div class="metric-value">${fmtBase(cost)}</div></div>
-    <div class="metric"><div class="metric-label">持倉筆數</div><div class="metric-value">${S.assets.length} <span style="font-size:13px;color:var(--muted)">筆</span></div></div>
+    <div class="metric"><div class="metric-label">持倉筆數</div><div class="metric-value">${S.assets.length}<span style="font-size:13px;color:var(--muted)"> 筆</span></div></div>
   `;
 }
-
 function renderCharts(){
   const C=['#6c8eff','#fbbf24','#4ade80','#f87171','#a78bfa','#2dd4bf','#fb923c','#e879f9'];
   const tMap={},oMap={};
@@ -385,32 +488,26 @@ function renderCharts(){
   const oc=document.getElementById('owner-chart')?.getContext('2d');
   if(oc){if(ownerChart)ownerChart.destroy();ownerChart=new Chart(oc,{type:'doughnut',data:{labels:Object.keys(oMap),datasets:[{data:Object.values(oMap),backgroundColor:C.slice(2,2+Object.keys(oMap).length),borderWidth:0}]},options:opts});}
 }
-
 function renderTop5(){
   const el=document.getElementById('top5');if(!el)return;
   if(!S.assets.length){el.innerHTML='<div class="empty">尚無資產</div>';return;}
   const sorted=[...S.assets].sort((a,b)=>curBase(b)-curBase(a)).slice(0,5);
-  el.innerHTML=sorted.map(a=>{
-    const g=gainPct(a);
-    return`<div class="asset-row">
-      <div class="asset-left">
-        <div class="asset-symbol">${a.symbol}<span class="ccy-tag">${a.currency}</span></div>
-        <div class="asset-name">${a.name} · ${a.owner||'–'}</div>
-      </div>
-      <div class="asset-right">
-        <div class="asset-value">${fmtBase(curBase(a))}</div>
-        <div class="asset-gain change ${cc(g)}">${fmtPct(g)}</div>
-      </div>
-    </div>`;
-  }).join('');
-}
-
+  el.innerHTML=sorted.map(a=>{const g=gainPct(a);return`<div class="asset-row">
+    <div class="asset-left">
+      <div class="asset-symbol">${a.symbol}<span class="ccy-tag">${a.currency}</span></div>
+      <div class="asset-name">${a.name} · ${a.owner||'–'}</div>
+      <div class="price-status ${priceCls(a)}">${priceLabel(a)}</div>
+    </div>
+    <div class="asset-right">
+      <div class="asset-value">${fmtBase(curBase(a))}</div>
+      <div class="asset-gain change ${cc(g)}">${fmtPct(g)}</div>
+    </div>
+  </div>`;}).join('');}
 function renderOwnerFilter(){
   const el=document.getElementById('owner-filter');if(!el)return;
   el.innerHTML=['all',...S.members].map(o=>`<button class="chip ${S.filterOwner===o?'active':''}" onclick="setFilter('${o}')">${o==='all'?'全部':o}</button>`).join('');
 }
 function setFilter(o){S.filterOwner=o;renderOwnerFilter();renderAssetList();}
-
 function renderAssetList(){
   const el=document.getElementById('asset-list');if(!el)return;
   const filtered=S.filterOwner==='all'?S.assets:S.assets.filter(a=>a.owner===S.filterOwner);
@@ -422,8 +519,9 @@ function renderAssetList(){
         <div>
           <div style="font-weight:700;font-size:15px;color:var(--accent)">${a.symbol}<span class="ccy-tag">${a.currency}</span> ${typeBadge(a.type)}</div>
           <div style="font-size:12px;color:var(--muted);margin-top:2px">${a.name}</div>
+          <div class="price-status ${priceCls(a)}">${priceLabel(a)}</div>
         </div>
-        <button class="btn btn-danger btn-sm" onclick="deleteAsset('${a.id}')">刪除</button>
+        <button class="btn btn-ghost btn-sm" onclick="openEdit('${a.id}')">編輯</button>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;font-size:12px">
         <div><div style="color:var(--muted)">持有人</div><div>${a.owner||'–'}</div></div>
@@ -438,72 +536,58 @@ function renderAssetList(){
         <span style="font-weight:700;font-size:16px;color:var(--accent)">${fmtBase(curBase(a))}</span>
       </div>
     </div>`;
-  }).join('');
-}
-
+  }).join('');}
 function renderFX(){
   const el=document.getElementById('fx-list');if(!el)return;
   const targets=CCYS.filter(c=>c!==S.baseCcy);
   el.innerHTML=targets.map(to=>{
-    const r=rate(S.baseCcy,to);
-    const key=S.baseCcy+'_'+to;
+    const r=rate(S.baseCcy,to),key=S.baseCcy+'_'+to;
     const hasOverride=S.rateOverrides[key]!=null;
     const auto=(S.ratesUSD[to]||1)/(S.ratesUSD[S.baseCcy]||1);
     return`<div class="fx-card">
       <div class="fx-pair">1 ${S.baseCcy} → ${to}${hasOverride?'<span class="override-badge">手動</span>':''}</div>
       <div class="fx-rate">${r.toLocaleString(undefined,{maximumFractionDigits:4})}</div>
-      <div class="fx-source">${hasOverride?'手動覆蓋（自動: '+auto.toLocaleString(undefined,{maximumFractionDigits:4})+'）':'API 自動更新'}</div>
+      <div class="fx-source">${hasOverride?'手動覆蓋（自動: '+auto.toLocaleString(undefined,{maximumFractionDigits:4})+'）':'API 自動'}</div>
       <div class="fx-input-row">
-        <input type="number" step="any" inputmode="decimal" placeholder="手動覆蓋匯率" value="${hasOverride?S.rateOverrides[key]:''}" oninput="setOverride('${key}',this.value)">
-        ${hasOverride?`<button class="btn btn-danger btn-sm" onclick="clearOverride('${key}')" style="white-space:nowrap">清除</button>`:''}
+        <input type="number" step="any" inputmode="decimal" placeholder="手動覆蓋" value="${hasOverride?S.rateOverrides[key]:''}" oninput="setOverride('${key}',this.value)">
+        ${hasOverride?`<button class="btn btn-danger btn-sm" onclick="clearOverride('${key}')">清除</button>`:''}
       </div>
     </div>`;
-  }).join('');
-}
-
-function setOverride(key,val){
-  const n=parseFloat(val);
-  if(!isNaN(n)&&n>0){S.rateOverrides[key]=n;save();render();}
-  else if(val===''){clearOverride(key);}
-}
+  }).join('');}
+function setOverride(key,val){const n=parseFloat(val);if(!isNaN(n)&&n>0){S.rateOverrides[key]=n;save();render();}else if(val==='')clearOverride(key);}
 function clearOverride(key){delete S.rateOverrides[key];save();render();}
-
 function calcConv(){
   const amt=parseFloat(document.getElementById('conv-amount')?.value)||0;
   const from=document.getElementById('conv-from')?.value||'USD';
   const to=document.getElementById('conv-to')?.value||'TWD';
   const r=rate(from,to);
-  const res=document.getElementById('conv-result');
-  const det=document.getElementById('conv-detail');
+  const res=document.getElementById('conv-result'),det=document.getElementById('conv-detail');
   if(res)res.textContent=(amt*r).toLocaleString(undefined,{maximumFractionDigits:4})+' '+to;
   if(det)det.textContent=`匯率 1 ${from} = ${r.toLocaleString(undefined,{maximumFractionDigits:4})} ${to}`;
 }
-
 function renderMemberList(){
   const el=document.getElementById('member-list');if(!el)return;
   el.innerHTML=S.members.map(m=>`<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border)">
     <span style="font-size:15px">${m}</span>
     <button class="btn btn-danger btn-sm" onclick="deleteMember('${m}')">移除</button>
-  </div>`).join('')||'<div class="empty">尚無成員</div>';
-}
-
+  </div>`).join('')||'<div class="empty">尚無成員</div>';}
 function renderOwnerSelect(){
   const sel=document.getElementById('f-owner');if(!sel)return;
-  sel.innerHTML='<option value="">選擇成員</option>'+S.members.map(m=>`<option value="${m}">${m}</option>`).join('');
-}
-
+  sel.innerHTML='<option value="">選擇成員</option>'+S.members.map(m=>`<option value="${m}">${m}</option>`).join('');}
+function renderEditOwnerSelect(){
+  const sel=document.getElementById('e-owner');if(!sel)return;
+  sel.innerHTML='<option value="">未指定</option>'+S.members.map(m=>`<option value="${m}">${m}</option>`).join('');}
 function renderMemberDetail(){
   const el=document.getElementById('member-detail');if(!el)return;
   if(!S.members.length){el.innerHTML='<div class="empty">尚無成員</div>';return;}
   el.innerHTML=S.members.map(m=>{
     const ma=S.assets.filter(a=>a.owner===m);
-    const total=ma.reduce((s,a)=>s+curBase(a),0);
-    const cost=ma.reduce((s,a)=>s+costBase(a),0);
+    const total=ma.reduce((s,a)=>s+curBase(a),0),cost=ma.reduce((s,a)=>s+costBase(a),0);
     const gain=total-cost,gainP=cost?gain/cost*100:0;
     return`<div class="card">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
         <span style="font-weight:700;font-size:17px">${m}</span>
-        <span style="font-weight:700;font-size:15px" class="change ${cc(gainP)}">${fmtPct(gainP)}</span>
+        <span class="change ${cc(gainP)}" style="font-weight:700">${fmtPct(gainP)}</span>
       </div>
       <div class="member-stats">
         <div class="stat-item"><div class="stat-label">總值(${S.baseCcy})</div><div class="stat-value" style="color:var(--accent)">${fmtBase(total)}</div></div>
@@ -512,37 +596,79 @@ function renderMemberDetail(){
         <div class="stat-item"><div class="stat-label">持倉筆數</div><div class="stat-value">${ma.length}</div></div>
       </div>
       ${ma.map(a=>{const g=gainPct(a);return`<div class="asset-row">
-        <div class="asset-left"><div class="asset-symbol">${a.symbol}<span class="ccy-tag">${a.currency}</span></div><div class="asset-name">${a.name} · ${a.broker||'–'}</div></div>
+        <div class="asset-left"><div class="asset-symbol">${a.symbol}<span class="ccy-tag">${a.currency}</span></div>
+        <div class="asset-name">${a.name} · ${a.broker||'–'}</div></div>
         <div class="asset-right"><div class="asset-value">${fmtBase(curBase(a))}</div><div class="asset-gain change ${cc(g)}">${fmtPct(g)}</div></div>
       </div>`;}).join('')}
     </div>`;
-  }).join('');
+  }).join('');}
+
+// ── EDIT MODAL ──
+function openEdit(id){
+  const a=S.assets.find(x=>x.id===id);if(!a)return;
+  editingId=id;
+  renderEditOwnerSelect();
+  document.getElementById('e-owner').value=a.owner||'';
+  document.getElementById('e-broker').value=a.broker||'';
+  document.getElementById('e-name').value=a.name||'';
+  document.getElementById('e-type').value=a.type||'stock';
+  document.getElementById('e-currency').value=a.currency||'TWD';
+  document.getElementById('e-qty').value=a.qty||'';
+  document.getElementById('e-cost').value=a.costPerUnit||'';
+  document.getElementById('e-price').value=a.manualPrice||'';
+  document.getElementById('e-note').value=a.note||'';
+  document.getElementById('edit-modal').classList.remove('hidden');
+}
+function closeEdit(){editingId=null;document.getElementById('edit-modal').classList.add('hidden');}
+function saveEdit(){
+  const a=S.assets.find(x=>x.id===editingId);if(!a)return;
+  a.owner=document.getElementById('e-owner').value;
+  a.broker=document.getElementById('e-broker').value.trim();
+  a.name=document.getElementById('e-name').value.trim();
+  a.type=document.getElementById('e-type').value;
+  a.currency=document.getElementById('e-currency').value;
+  a.qty=parseFloat(document.getElementById('e-qty').value)||a.qty;
+  a.costPerUnit=parseFloat(document.getElementById('e-cost').value)||a.costPerUnit;
+  const mp=parseFloat(document.getElementById('e-price').value);
+  a.manualPrice=isNaN(mp)?null:mp;
+  a.note=document.getElementById('e-note').value.trim();
+  save();closeEdit();render();
+}
+function deleteFromEdit(){
+  if(!confirm('確定刪除？'))return;
+  S.assets=S.assets.filter(x=>x.id!==editingId);
+  delete S.prices[editingId];
+  save();closeEdit();render();
 }
 
 // ── ACTIONS ──
 function addAsset(){
-  const owner=document.getElementById('f-owner').value;
-  const broker=document.getElementById('f-broker').value.trim();
   const symbol=document.getElementById('f-symbol').value.trim();
   const name=document.getElementById('f-name').value.trim();
-  const type=document.getElementById('f-type').value;
-  const currency=document.getElementById('f-currency').value;
   const qty=parseFloat(document.getElementById('f-qty').value);
   const cost=parseFloat(document.getElementById('f-cost').value);
-  const mp=parseFloat(document.getElementById('f-price').value)||null;
-  const note=document.getElementById('f-note').value.trim();
   const msg=document.getElementById('add-msg');
   if(!symbol||!name||!qty||!cost){msg.style.color='var(--red)';msg.textContent='請填寫代號、名稱、數量、成本';return;}
-  S.assets.push({id:Date.now().toString(),owner,broker,symbol,name,type,currency,qty,costPerUnit:cost,manualPrice:mp,note,addedAt:new Date().toISOString()});
+  const mp=parseFloat(document.getElementById('f-price').value);
+  S.assets.push({
+    id:Date.now().toString(),
+    owner:document.getElementById('f-owner').value,
+    broker:document.getElementById('f-broker').value.trim(),
+    symbol,name,
+    type:document.getElementById('f-type').value,
+    currency:document.getElementById('f-currency').value,
+    qty,costPerUnit:cost,
+    manualPrice:isNaN(mp)?null:mp,
+    note:document.getElementById('f-note').value.trim(),
+    addedAt:new Date().toISOString()
+  });
   save();render();
   ['f-symbol','f-name','f-qty','f-cost','f-price','f-note','f-broker'].forEach(id=>{document.getElementById(id).value='';});
   msg.style.color='var(--green)';msg.textContent=`✓ ${name} 已新增`;
   setTimeout(()=>msg.textContent='',3000);
 }
-function deleteAsset(id){if(!confirm('確定刪除？'))return;S.assets=S.assets.filter(a=>a.id!==id);delete S.prices[id];save();render();}
 function addMember(){const v=document.getElementById('new-member').value.trim();if(!v||S.members.includes(v))return;S.members.push(v);document.getElementById('new-member').value='';save();render();}
 function deleteMember(m){if(!confirm(`移除「${m}」？`))return;S.members=S.members.filter(x=>x!==m);save();render();}
-
 function showPage(p){
   document.querySelectorAll('.page').forEach(el=>el.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(el=>el.classList.remove('active'));
@@ -553,26 +679,20 @@ function showPage(p){
   if(p==='dashboard')renderCharts();
 }
 
-// ── SEED ──
-function seed(){
-  S.members=['本人','配偶','孩子'];
-  S.assets=[
-    {id:'1',owner:'本人',broker:'永豐',symbol:'2330.TW',name:'台積電',type:'stock',currency:'TWD',qty:500,costPerUnit:580,manualPrice:920,note:'',addedAt:''},
-    {id:'2',owner:'本人',broker:'Futu',symbol:'AAPL',name:'Apple',type:'stock',currency:'USD',qty:20,costPerUnit:160,manualPrice:195,note:'',addedAt:''},
-    {id:'3',owner:'配偶',broker:'國泰',symbol:'0050.TW',name:'元大台灣50',type:'etf',currency:'TWD',qty:200,costPerUnit:130,manualPrice:148,note:'',addedAt:''},
-    {id:'4',owner:'本人',broker:'Binance',symbol:'BTC',name:'Bitcoin',type:'crypto',currency:'USD',qty:0.15,costPerUnit:42000,manualPrice:65000,note:'',addedAt:''},
-    {id:'5',owner:'配偶',broker:'Binance',symbol:'ETH',name:'Ethereum',type:'crypto',currency:'USD',qty:2,costPerUnit:2200,manualPrice:3200,note:'',addedAt:''},
-    {id:'6',owner:'孩子',broker:'玉山',symbol:'CASH_TWD',name:'定存',type:'cash',currency:'TWD',qty:1,costPerUnit:300000,manualPrice:300000,note:'教育基金',addedAt:''},
-    {id:'7',owner:'本人',broker:'SBI',symbol:'7203.T',name:'Toyota',type:'stock',currency:'JPY',qty:100,costPerUnit:2500,manualPrice:3100,note:'',addedAt:''},
-  ];
-  save();
-}
-
 // ── INIT ──
 load();
-if(!S.assets.length)seed();
+// Clear demo data if first real use
+if(!localStorage.getItem('fa_v4')){
+  // fresh start — no seed data, let user add their own
+}
 render();
-if(S.lastFX||S.lastPrice)setStatus('ok',`報價 ${S.lastPrice||'–'} ／ 匯率 ${S.lastFX||'–'}`);
+if(S.lastFX) setFXStatus('ok',`匯率已更新 ${S.lastFX}`);
+else setFXStatus('idle','尚未更新匯率');
+if(S.lastPrice) setPriceStatus('ok',`報價已更新 ${S.lastPrice}`);
+else setPriceStatus('idle','尚未更新報價');
+// Set dot-idle class
+document.getElementById('sd-price')?.classList.add('dot-idle');
+document.getElementById('sd-fx')?.classList.add('dot-idle');
 </script>
 </body>
 </html>
